@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding='ISO-8859-1' standalone='yes' ?>
+<TestRun>
+  <FailedTests>
+    <FailedTest id="4">
+      <Name>TestM::testClientfdr</Name>
+      <FailureType>Assertion</FailureType>
+      <Location>
+        <File>testing1.cpp</File>
+        <Line>70</Line>
+      </Location>
+      <Message>assertion failed
+- Expression: 3==server-&gt;getClientfd()
+</Message>
+    </FailedTest>
+    <FailedTest id="5">
+      <Name>TestM::testSockfdr</Name>
+      <FailureType>Assertion</FailureType>
+      <Location>
+        <File>testing1.cpp</File>
+        <Line>74</Line>
+      </Location>
+      <Message>assertion failed
+- Expression: 4==server-&gt;getSockfd()
+</Message>
+    </FailedTest>
+    <FailedTest id="6">
+      <Name>TestM::testCsockfdr</Name>
+      <FailureType>Assertion</FailureType>
+      <Location>
+        <File>testing1.cpp</File>
+        <Line>78</Line>
+      </Location>
+      <Message>assertion failed
+- Expression: 6==client-&gt;getClientsockfd()
+</Message>
+    </FailedTest>
+    <FailedTest id="8">
+      <Name>TestM::testpidr</Name>
+      <FailureType>Assertion</FailureType>
+      <Location>
+        <File>testing1.cpp</File>
+        <Line>86</Line>
+      </Location>
+      <Message>assertion failed
+- Expression: 1233==client-&gt;getpid()
+</Message>
+    </FailedTest>
+  </FailedTests>
+  <SuccessfulTests>
+    <Test id="1">
+      <Name>TestM::testClientfd</Name>
+    </Test>
+    <Test id="2">
+      <Name>TestM::testSockfd</Name>
+    </Test>
+    <Test id="3">
+      <Name>TestM::testCsockfd</Name>
+    </Test>
+    <Test id="7">
+      <Name>TestM::testpid</Name>
+    </Test>
+  </SuccessfulTests>
+  <Statistics>
+    <Tests>8</Tests>
+    <FailuresTotal>4</FailuresTotal>
+    <Errors>0</Errors>
+    <Failures>4</Failures>
+  </Statistics>
+</TestRun>
