@@ -1,0 +1,31 @@
+SRC=src
+OBJ=obj
+BIN=bin
+INCLUDE=include
+VALGRIND = tools/valgrind
+
+INCLUDEFLAGS=-I$(INCLUDE)
+CPPFLAGS=-ansi -c -g -Wall -std=c++11 -lpthread -DDEBUG -m64 $(INCLUDEFLAGS)
+
+
+
+serverexe:servermain.o server.o 
+	g++ -o $(BIN)/serverexe $(OBJ)/servermain.o $(OBJ)/server.o 
+
+servermain.o:$(SRC)/servermain.cpp
+	g++ -o $(OBJ)/servermain.o $(CPPFLAGS) $(SRC)/servermain.cpp
+
+server.o:$(SRC)/server.cpp
+	g++ -o $(OBJ)/server.o $(CPPFLAGS) $(SRC)/server.cpp
+
+
+
+valgrind: serverexe 	
+	valgrind --tool=memcheck $(BIN)/clientexe 2>$(VALGRIND)/valgrind3.txt
+
+clean:
+	echo"cleaning the .exe and .o files"
+	rm -f $(BIN)/serverexe 
+
+
+
